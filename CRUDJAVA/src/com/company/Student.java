@@ -1,21 +1,29 @@
 package com.company;
 
 public class Student {
-    private static int autoId=1;
-    private int id;
+    private static int autoId = 1;
+    private String id;
     private String name;
     private String className;
     private int age;
 
     public Student(String name, String className, int age) {
-        this.id = autoId;
+        String strID = autoId + "";
+        this.id = String.format("USER%04d",autoId);
+//        if (strID.length() == 1) {
+//            this.id = "USER00" + autoId;
+//        } else if (strID.length() == 2) {
+//            this.id = "USER0" + strID;
+//        } else if (strID.length() == 3) {
+//            this.id = "USER" + strID;
+//        }
         this.name = name;
         this.className = className;
         this.age = age;
         autoId++;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 

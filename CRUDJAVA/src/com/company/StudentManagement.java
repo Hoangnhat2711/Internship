@@ -14,7 +14,7 @@ public class StudentManagement {
         students.add(student);
     }
 
-    public void deleteStudent(int id) {
+    public void deleteStudent(String id) {
         for (int i = 0; i < students.size(); i++) {
             if (students.get(i).getId() == id) {
                 students.remove(i);
@@ -24,7 +24,7 @@ public class StudentManagement {
         System.out.println("Không tìm thấy sinh viên có id: " + id);
     }
 
-    public void updateStudent(int id, String newName, String newClassName, int newAge) {
+    public void updateStudent(String id, String newName, String newClassName, int newAge) {
         for (Student student : students) {
             if (student.getId() == id) {
                 student.setName(newName);
@@ -58,6 +58,7 @@ public class StudentManagement {
         }
     }
 
+
     public void displayStudentByName(String name) {
         for (Student student : students) {
             if (student.getName()==name) {
@@ -68,7 +69,7 @@ public class StudentManagement {
         System.out.println("Không tìm thấy sinh viên có tên: " + name);
     }
 
-    public void displayStudentByID(int id) {
+    public void displayStudentByID(String id) {
         for (Student student : students) {
             if (student.getId() == id) {
                 System.out.println(student);
@@ -77,4 +78,18 @@ public class StudentManagement {
         }
         System.out.println("Không tìm thấy sinh viên có id: " + id);
     }
-}
+//    public void displayMaxId(){
+//        int Max = 0;
+//        for (Student student : students){
+//            if (student.getId()>Max){
+//                Max = student.getId();
+//            }
+//        }
+//        for (Student student : students){
+//            if (student.getId()==Max){
+//                System.out.println(student);
+//            }
+//        }
+//        }
+//}
+
